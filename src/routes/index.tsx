@@ -825,7 +825,7 @@ function Index() {
                               <Card
                                 key={i}
                                 size="small"
-                                title={`Education ${i + 1}}`}
+                                title={`Education ${i + 1}`}
                                 extra={(
                                   field.state.value?.length <= 1
                                     ? ''
