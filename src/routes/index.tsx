@@ -53,8 +53,9 @@ function Index() {
     education: z.array(z.object({
       school: z.string().nonempty('Please enter your school/university'),
       major: z.string().nonempty('Please enter your major/field of study'),
-      periodStart: z.string().nonempty('Please enter your education period'),
-      periodEnd: z.string().nonempty('Please enter your education period'),
+      period: z.array(
+        z.string().nonempty('Please enter your education period'),
+      ),
     })),
   })
 
@@ -65,8 +66,6 @@ function Index() {
       nationality: '',
       dateOfBirth: '',
       birthplace: '',
-      height: '',
-      weight: '',
       idNumber: '',
       homeAddress: '',
       phoneNumber: '',
@@ -90,9 +89,8 @@ function Index() {
         inline: 'center',
       })
     },
-    onSubmit: async ({ value }) => {
+    onSubmit: async () => {
       // Do something with form data
-      console.log(value)
     },
   })
 
@@ -323,6 +321,8 @@ function Index() {
                                 />
                                 {field.state.meta.isTouched && !field.state.meta.isValid
                                   ? (
+
+                                // @ts-expect-error its okay
                                       <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                     )
                                   : null}
@@ -362,6 +362,7 @@ function Index() {
                                   />
                                   {field.state.meta.isTouched && !field.state.meta.isValid
                                     ? (
+                                  // @ts-expect-error its okay
                                         <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(', ')}</em>
                                       )
                                     : null}
@@ -401,6 +402,7 @@ function Index() {
                                   />
                                   {field.state.meta.isTouched && !field.state.meta.isValid
                                     ? (
+                                  // @ts-expect-error its okay
                                         <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                       )
                                     : null}
@@ -440,6 +442,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -474,6 +477,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -555,6 +559,7 @@ function Index() {
                               </Space.Compact>
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -600,6 +605,7 @@ function Index() {
                             />
                             {field.state.meta.isTouched && !field.state.meta.isValid
                               ? (
+                            // @ts-expect-error its okay
                                   <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                 )
                               : null}
@@ -633,6 +639,7 @@ function Index() {
                             />
                             {field.state.meta.isTouched && !field.state.meta.isValid
                               ? (
+                            // @ts-expect-error its okay
                                   <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                 )
                               : null}
@@ -678,6 +685,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -710,6 +718,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -742,6 +751,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -781,6 +791,7 @@ function Index() {
                               />
                               {field.state.meta.isTouched && !field.state.meta.isValid
                                 ? (
+                              // @ts-expect-error its okay
                                     <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                   )
                                 : null}
@@ -856,6 +867,7 @@ function Index() {
                                             />
                                             {field.state.meta.isTouched && !field.state.meta.isValid
                                               ? (
+                                            // @ts-expect-error its okay
                                                   <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                                 )
                                               : null}
@@ -888,6 +900,7 @@ function Index() {
                                             />
                                             {field.state.meta.isTouched && !field.state.meta.isValid
                                               ? (
+                                            // @ts-expect-error its okay
                                                   <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                                 )
                                               : null}
@@ -924,6 +937,7 @@ function Index() {
                                           />
                                           {field.state.meta.isTouched && !field.state.meta.isValid
                                             ? (
+                                          // @ts-expect-error its okay
                                                 <em style={{ color: 'red', fontSize: '12px' }}>{field.state.meta.errors.map(err => err.message).join(',')}</em>
                                               )
                                             : null}
@@ -941,8 +955,7 @@ function Index() {
                             onClick={() => field.pushValue({
                               school: '',
                               major: '',
-                              periodStart: '',
-                              periodEnd: '',
+                              period: ['', ''],
                             })}
                             style={{ marginTop: '10px' }}
                             type="link"
